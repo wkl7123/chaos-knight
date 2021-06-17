@@ -6,6 +6,7 @@ import (
 	"io/ioutil"
 	"math"
 	"math/rand"
+	"strings"
 	"time"
 )
 
@@ -13,7 +14,7 @@ func init() {
 	rand.Seed(time.Now().Unix())
 }
 
-type Conf map[string]Scene
+type Conf map[string]*Scene
 
 type Scene struct {
 	Layers FullLayers `json:"layers"`
@@ -30,6 +31,10 @@ type FullLayers struct {
 type LayerOption struct {
 	Prob   float32  `json:"prob"`
 	Choice []string `json:"choice"`
+}
+
+func (inst LayerOption) String() string {
+	return strings.Join(inst.Choice, ",")
 }
 
 func CheckOptions(options []*LayerOption) bool {

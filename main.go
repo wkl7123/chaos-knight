@@ -18,6 +18,6 @@ func main() {
 		Buvid: "DJKFSJKSJAKFSF",
 		Scene: "场景1",
 	}
-	_, _ = parser.Do(ctx, req, req.Scene)
-
+	_, _, _ = parser.Do(ctx, req, req.Scene)
+	// form msg to message queue, and resp to client
 }
