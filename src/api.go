@@ -1,8 +1,9 @@
 package src
 
 type Request struct {
-	uid   int64
-	buvid string
+	Uid   int64
+	Buvid string
+	Scene string
 }
 
 type Response struct {
@@ -10,8 +11,8 @@ type Response struct {
 }
 
 type Item struct {
-	id      int64
-	score   float32
-	sources []string
-	feature *Feature
+	Id      int64
+	Score   float32
+	Sources []string
+	Feature *Feature
 }

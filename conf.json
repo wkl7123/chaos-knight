@@ -4,68 +4,67 @@
             "recall": [
                 {
                     "prob": 0.5,
-                    "choose": [
-                        "渠道1",
-                        "渠道3"
+                    "choice": [
+                        "hot",
+                        "r2r"
                     ]
                 },
                 {
                     "prob": 0.5,
-                    "choose": [
-                        "渠道1",
-                        "渠道2"
+                    "choice": [
+                        "hot",
+                        "u2r2r"
                     ]
                 }
             ],
             "feature": [
                 {
                     "prob": 1.0,
-                    "choose": [
-                        "普通",
-                        "场景1特征"
+                    "choice": [
+                        "common"
                     ]
                 }
             ],
             "filter": [
                 {
                     "prob": 0.3,
-                    "choose": [
-                        "过滤条件1"
+                    "choice": [
+                        "dislike"
                     ]
                 },
                 {
                     "prob": 0.7,
-                    "choose": [
-                        "过滤条件2"
+                    "choice": [
+                        "recommended"
                     ]
                 }
             ],
             "model": [
                 {
                     "prob": 0.2,
-                    "choose": [
+                    "choice": [
                         "lr@v0.0.1"
                     ]
                 },
                 {
                     "prob": 0.8,
-                    "choose": [
-                        "mlp@v0.0.2"
+                    "choice": [
+                        "lr@v0.0.2"
                     ]
                 }
             ],
             "rerank": [
                 {
                     "prob": 0.1,
-                    "choose": [
-                        "重排1",
-                        "重排2"
+                    "choice": [
+                        "idea1",
+                        "idea2"
                     ]
                 },
                 {
                     "prob": 0.9,
-                    "choose": [
-                        "重排3"
+                    "choice": [
+                        "idea3"
                     ]
                 }
             ]

@@ -14,14 +14,12 @@ type Mrc struct {
 
 // feature
 type Ft struct {
-	//Landing int64
-	//Ctx     context.Context
 	Fm map[int64]*Feature
 }
 
 // rank
 type Rk struct {
-	Iss *ItemScoreSlice
+	Iss ItemScoreSlice
 }
 
 type ItemInfo struct {
@@ -45,13 +43,11 @@ type ItemScore struct {
 	// 房间号
 	ItemId int64
 	// 模型阶段的得分
-	ModelScore float64
+	ModelScore float32
 	// 最终得分
-	Score float64
+	Score float32
 	// 传递下去的特征
 	Feature *Feature
-	// 复合模型得分
-	AssembleScore map[string]interface{}
 }
 
 type ItemScoreSlice []*ItemScore
