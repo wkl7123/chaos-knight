@@ -16,7 +16,7 @@ func main() {
 	req := &src.Request{
 		Uid:   925082,
 		Buvid: "DJKFSJKSJAKFSF",
-		Scene: "场景1",
+		Scene: "scene1",
 	}
 	_, _, _ = parser.Do(ctx, req, req.Scene)
 	// form msg to message queue, and resp to client
