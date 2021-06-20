@@ -26,6 +26,6 @@ func main() {
 			fmt.Printf("err: %v\n", err)
 			return
 		}
-		fmt.Printf("%s, %s, %s, %s, %s\n", trackInfo["recall"], trackInfo["feature"], trackInfo["filter"], trackInfo["model"], trackInfo["rerank"])
+		fmt.Printf("%s,%s,%s,%s,%s\n", trackInfo["recall"], trackInfo["feature"], trackInfo["filter"], trackInfo["model"], trackInfo["rerank"])
 	}
 }
