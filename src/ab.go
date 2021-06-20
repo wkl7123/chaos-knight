@@ -34,7 +34,7 @@ type LayerOption struct {
 }
 
 func (inst LayerOption) String() string {
-	return strings.Join(inst.Choice, ",")
+	return strings.Join(inst.Choice, ";")
 }
 
 func CheckOptions(options []*LayerOption) bool {

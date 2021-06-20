@@ -37,6 +37,7 @@ type Feature struct {
 	*UserInfo
 	CrossFeaStrMap map[string]string
 	CrossFeaFltMap map[string]float32
+	Sources        []string
 }
 
 type ItemScore struct {

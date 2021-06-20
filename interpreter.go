@@ -47,6 +47,7 @@ func (it *Interpreter) Do(ctx context.Context, req *src.Request, scene string) (
 	trackInfo["recall"] = recallLayerOption.String()
 	mrc, err := recall.GetCandidates(ctx, req, recallLayerOption.Choice)
 	if err != nil {
+		fmt.Printf("err: %v\n", err)
 		return
 	}
 
@@ -54,6 +55,7 @@ func (it *Interpreter) Do(ctx context.Context, req *src.Request, scene string) (
 	trackInfo["feature"] = featureLayerOption.String()
 	ft, err := feature.GetFeature(ctx, req, mrc, featureLayerOption.Choice)
 	if err != nil {
+		fmt.Printf("err: %v\n", err)
 		return
 	}
 
@@ -61,6 +63,7 @@ func (it *Interpreter) Do(ctx context.Context, req *src.Request, scene string) (
 	trackInfo["filter"] = filterLayerOption.String()
 	ft, err = filter.DoFilter(ctx, req, ft, filterLayerOption.Choice)
 	if err != nil {
+		fmt.Printf("err: %v\n", err)
 		return
 	}
 
@@ -68,11 +71,16 @@ func (it *Interpreter) Do(ctx context.Context, req *src.Request, scene string) (
 	trackInfo["model"] = modelLayerOption.String()
 	rk, err = model.DoPredict(ctx, req, ft, modelLayerOption.Choice)
 	if err != nil {
+		fmt.Printf("err: %v\n", err)
 		return
 	}
 	rerankLayerOption := src.Pick(layers.Rerank)
 	trackInfo["rerank"] = rerankLayerOption.String()
 	rk, err = rerank.DoRerank(ctx, req, rk, rerankLayerOption.Choice)
+	if err != nil {
+		fmt.Printf("err: %v\n", err)
+		return
+	}
 
 	return
 }

@@ -40,7 +40,7 @@ func GetCandidates(ctx context.Context, req *src.Request, tags []string) (mrc *s
 		defer wg.Done()
 		inst := getRecallInst(tag)
 		if inst != nil {
-			if rc, err := inst.Do(ctx, req); err != nil && rc != nil {
+			if rc, err := inst.Do(ctx, req); err == nil && rc != nil {
 				mutex.Lock()
 				m[rc.Tag] = rc.ItemIds
 				mutex.Unlock()
